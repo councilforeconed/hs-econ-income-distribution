@@ -1,0 +1,29 @@
+{
+  "name": "hs-econ-income-distribution",
+  "version": "0.0.0",
+  "authors": [
+    "Steve Kinney <hello@stevekinney.net>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "http://councilforeconed.org",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "~1.5.0",
+    "jquery-ui": "~1.10.4",
+    "normalize-css": "~3.0.1",
+    "numeral": "~1.5.3",
+    "lodash": "~2.4.1",
+    "d3": "~3.4.4"
+  }
+}

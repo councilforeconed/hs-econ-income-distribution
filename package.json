@@ -1,0 +1,20 @@
+{
+  "name": "hs-econ-income-distribution",
+  "version": "0.0.0",
+  "author": "Steve Kinney",
+  "license": "MIT",
+  "devDependencies": {
+    "time-grunt": "^0.3.1",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt": "^0.4.4",
+    "load-grunt-tasks": "^0.4.0",
+    "grunt-ember-handlebars": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-concat-sourcemap": "^0.4.1",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-open": "^0.2.3",
+    "connect-livereload": "^0.3.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-sass": "^0.7.3"
+  }
+}

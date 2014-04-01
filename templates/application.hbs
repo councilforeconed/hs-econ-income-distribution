@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="controls">
+        <button type="resetCards" {{action 'resetCards'}}>Reset Cards</button>
+    </div>
+    <div class="income-cards">
+    {{#each}}
+        {{income-card card=this}}
+    {{/each}}
+    </div>
+    <div class="quintile-bins">
+    {{#each bin in bins}}
+        {{quintile-bin bin=bin}}
+    {{/each}}
+    </div>
+</div>

@@ -1,0 +1,98 @@
+body {
+  padding-top: 40px;
+  background-color: #F9F9F9;
+}
+
+$boxShadow: 2px 2px 0px;
+
+$containerPadding: 10px;
+$containerWidthMobile: 100%;
+$containerWidthTablet: 750px;
+$containerWidthWide: 970px;
+$containerWidthSuperWide: 1170px;
+
+.container {
+  @media (max-width: 767px) {
+    width: $containerWidthMobile;
+    padding: 0;
+    border: none;
+  }
+  @media (min-width: 768px) {
+    width: $containerWidthTablet;
+  }
+  @media (min-width: 769px) {
+    width: $containerWidthTablet;
+    padding: $containerPadding;
+  }
+  @media (min-width: 992px) {
+    width: $containerWidthWide;
+    padding: $containerPadding;
+  }
+  @media (min-width: 1200px) {
+    width: $containerWidthSuperWide;
+    padding: $containerPadding;
+  }
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #EEE;
+  background-color: white;
+}
+
+.income-cards, .quintile-bins {
+  text-align: center;
+}
+
+$incomeCardColor: rgba(109, 185, 133, 1);
+.income-card {
+  background-color: $incomeCardColor;
+  color: white;
+  height: 50px;
+  padding: 5px;
+  margin: 10px 10px 10px 0;
+  text-align: center;
+  display: inline-block;
+  box-shadow: $boxShadow darken($incomeCardColor,40);
+  @media (max-width: 767px) {
+    width: 75px;
+  }
+  @media (min-width: 768px) {
+    width: 80px;
+  }
+  @media (min-width: 1200px) {
+    width: 100px;
+  }
+  @media (min-width: 992px) {
+    width: 115px;
+  }
+  &.income-card-active {
+    background-color: lighten($incomeCardColor, 10);
+  }
+}
+
+$quintileBinColor: rgb(255, 244, 183);
+.quintile-bin {
+  @media (max-width: 767px) {
+    min-height: 100px;
+    display: block;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    width: 143px;
+  }
+  @media (min-width: 992px) {
+    width: 188px;
+  }
+  @media (min-width: 1200px) {
+    width: 228px;
+  }
+  display: inline-block;
+  background-color: $quintileBinColor;
+  min-height: 400px;
+  border: 1px solid darken($quintileBinColor,30);
+  box-shadow: $boxShadow darken($quintileBinColor,40);
+}
+
+.quintile-total {
+  background-color: darken($quintileBinColor,10); 
+  padding: 0.5rem;
+}
