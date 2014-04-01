@@ -1,7 +1,8 @@
-App.ApplicationController = Ember.ArrayController.extend({
+App.ApplicationController = Ember.ArrayController.extend(Ember.Evented, {
   
   init: function () {
-    this._super(); 
+    this._super();
+    this.on('binChange', this.onBinChange)
   },
   
   quintiles: function () {
@@ -15,8 +16,12 @@ App.ApplicationController = Ember.ArrayController.extend({
   }.property('content'),
   
   bins: function () {
-    var bins = App.QuintileBins.create();
+    var bins = App.QuintileBins.create({ controller: this });
     return bins.get('bins');
-  }.property()
+  }.property(),
+  
+  onBinChange: function () {
+    
+  }
   
 });

@@ -31,7 +31,7 @@ App.QuintileBins = Ember.Object.extend({
   }.property('firstQuintile', 'secondQuintile', 'thirdQuintile', 'fourthQuintile', 'fifthQuintile'),
   
   onChange: function () {
-    console.log(this.get('bins'));
+    this.get('controller').trigger('binChange');
   }.observes('firstQuintile.cards.@each', 'secondQuintile.cards.@each', 'thirdQuintile.cards.@each', 'fourthQuintile.cards.@each', 'fifthQuintile.cards.@each')
   
 });
