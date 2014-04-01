@@ -21,33 +21,19 @@ App.ApplicationController = Ember.ArrayController.extend({
       bins.push(App.QuintileBin.create());
     });
     
-    bins.forEach(function (bin) {
-      bin.get('cards').addArrayObserver(this.get('binObserver'));
-    }, this);
-    
-    bins.addArrayObserver(this.get('binCollectionObserver'));
-    
     return bins;
-  }.property(),
+  }.property('bins.@each'),
   
-  binObserver: function () {
-    var self = this;
-    return Ember.Object.create({
-      arrayWillChange: function () {},
-      arrayDidChange: function (observedObj, start, removeCount, addCount) {
-        self.get('bins').arrayContentDidChange();
-      }
-    });
-  }.property(),
+  a: function () {
+    console.log('bins');
+  }.observes('bins'),
   
-  binCollectionObserver: function () {
-    var self = this;
-    return Ember.Object.create({
-      arrayWillChange: function () {},
-      arrayDidChange: function (observedObj, start, removeCount, addCount) {
-        console.log(self.get('bins'));
-      }
-    });
-  }.property(),
+  b: function () {
+    console.log('bins.[]');
+  }.observes('bins.[]'),
+  
+  c: function () {
+    console.log('bins.@eac');
+  }.observes('bins.@each'),
   
 });
