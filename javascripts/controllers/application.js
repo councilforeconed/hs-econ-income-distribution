@@ -15,25 +15,8 @@ App.ApplicationController = Ember.ArrayController.extend({
   }.property('content'),
   
   bins: function () {
-    var bins = Em.A();
-    
-    _.times(5, function (i) {
-      bins.push(App.QuintileBin.create());
-    });
-    
-    return bins;
-  }.property('bins.@each'),
-  
-  a: function () {
-    console.log('bins');
-  }.observes('bins'),
-  
-  b: function () {
-    console.log('bins.[]');
-  }.observes('bins.[]'),
-  
-  c: function () {
-    console.log('bins.@eac');
-  }.observes('bins.@each'),
+    var bins = App.QuintileBins.create();
+    return bins.get('bins');
+  }.property()
   
 });
