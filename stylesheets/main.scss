@@ -54,6 +54,7 @@ $incomeCardColor: rgba(109, 185, 133, 1);
   box-shadow: $boxShadow darken($incomeCardColor,40);
   @media (max-width: 767px) {
     width: 75px;
+    padding: 0;
   }
   @media (min-width: 768px) {
     width: 80px;

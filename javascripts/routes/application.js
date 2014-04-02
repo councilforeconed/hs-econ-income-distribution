@@ -22,7 +22,7 @@ App.ApplicationRoute = Ember.Route.extend({
       165000,
       311400
     ];
-    return _.shuffle(incomes).map(function (card) {
+    return incomes.map(function (card) {
       return App.IncomeCard.create({value: card});
     });
   },

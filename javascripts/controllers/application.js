@@ -5,6 +5,8 @@ App.ApplicationController = Ember.ArrayController.extend(Ember.Evented, {
     this.on('binChange', this.onBinChange)
   },
   
+  correctAnswer: false,
+  
   quintiles: function () {
     var incomes = this.get('content').sortBy('value');
     var quintiles = Array.apply(null, new Array(5)).map(function () { return []; });
@@ -21,7 +23,9 @@ App.ApplicationController = Ember.ArrayController.extend(Ember.Evented, {
   }.property(),
   
   onBinChange: function () {
-    
+    var binValues = this.get('bins')
+      .map(function (x) { return x.get('cards') });
+    this.set('correctAnswer', _.isEqual(binValues,this.get('quintiles')));
   }
   
 });
