@@ -13,6 +13,7 @@ module.exports = function(grunt) {
   // load all grunt tasks
   require('load-grunt-tasks')(grunt);
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     concat_sourcemap: {
       options: {},
       development: {
@@ -100,6 +101,13 @@ module.exports = function(grunt) {
       server: {
         path: 'http://localhost:<%= connect.options.port %>'
       }
+    },
+    exec: {
+      deploy: {
+        command: 'scp -r dist/* cee:~/technology/<%= pkg.name %>',
+        stdout: true,
+        stderr: true
+      }
     }
   });
   
@@ -112,6 +120,11 @@ module.exports = function(grunt) {
     'sass:main',
     'concat_sourcemap:development',
     'ember_handlebars'
+  ]);
+  
+  grunt.registerTask('deploy', [
+    'build',
+    'exec:deploy'
   ]);
   
   grunt.registerTask('serve', function (target) {
