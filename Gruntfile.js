@@ -104,7 +104,7 @@ module.exports = function(grunt) {
     },
     exec: {
       deploy: {
-        command: 'scp -r dist/* cee:~/technology/<%= pkg.name %>',
+        command: 'scp -r ./* cee:~/technology/<%= pkg.name %>',
         stdout: true,
         stderr: true
       }
